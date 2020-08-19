@@ -1,0 +1,74 @@
+{
+  "name": "@storybook/addon-bench",
+  "version": "0.0.1",
+  "description": "Storybook benchmarking helper addon",
+  "repository": "storybookjs/addon-bench",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "scripts": {
+    "prebuild": "rimraf lib",
+    "build": "babel src --out-dir dist --ignore spec.js,test.js --extensions .ts --extensions .js --extensions .tsx",
+    "build-storybook": "build-storybook -c ./example/.storybook",
+    "build:dev": "babel -w src --out-dir dist --ignore spec.js,test.js --extensions .ts --extensions .js --extensions .tsx",
+    "lint": "eslint --cache src --ext ts --ext tsx",
+    "prepare": "yarn build",
+    "release": "auto shipit",
+    "storybook": "start-storybook -p 9009 -c ./example/.storybook",
+    "test": "yarn test:all",
+    "test:all": "jest src",
+    "test:dev": "jest src --watch"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,json,css,md}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "prettier": {
+    "singleQuote": true
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@auto-it/all-contributors": "^9.34.1",
+    "@auto-it/first-time-contributor": "^9.34.1",
+    "@babel/cli": "^7.1.2",
+    "@babel/core": "^7.1.6",
+    "@babel/preset-env": "^7.1.0",
+    "@design-systems/eslint-config": "^1.4.15",
+    "@storybook/react": "^6.0.0",
+    "all-contributors-cli": "^6.14.2",
+    "auto": "^9.34.1",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "^24.5.0",
+    "babel-loader": "^8.0.6",
+    "eslint": "^6.8.0",
+    "husky": "^3.0.9",
+    "jest": "^24.5.0",
+    "lint-staged": "^9.4.2",
+    "prettier": "^1.15.2",
+    "prop-types": "^15.6.2",
+    "regenerator-runtime": "^0.13.3"
+  },
+  "peerDependencies": {
+    "@storybook/addons": ">= 5.x",
+    "@storybook/channels": ">= 5.x",
+    "@storybook/components": ">= 5.x",
+    "@storybook/core-events": ">= 5.x",
+    "@storybook/theming": ">= 5.x",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
+  },
+  "auto": {
+    "plugins": [
+      "npm",
+      "released",
+      "first-time-contributor",
+      "all-contributors"
+    ]
+  }
+}
