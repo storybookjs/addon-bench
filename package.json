@@ -64,5 +64,8 @@
       "first-time-contributor",
       "all-contributors"
     ]
-  }
+  },
+  "keywords": [
+    "storybook-addon"
+  ]
 }
