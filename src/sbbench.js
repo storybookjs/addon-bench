@@ -1,4 +1,4 @@
-export const HOST = 'localhost'; //
+export const HOST = 'localhost';
 export const PORT = 9898;
 export const MANAGER_RENDER = 'managerRender';
 export const PREVIEW_RENDER = 'previewRender';
