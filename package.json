@@ -1,6 +1,7 @@
 {
   "name": "@storybook/addon-bench",
   "version": "0.0.2",
+  "author": "Storybook",
   "description": "Storybook benchmarking helper addon",
   "repository": "storybookjs/addon-bench",
   "license": "MIT",
